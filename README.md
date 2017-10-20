@@ -1,2 +1,8 @@
 # demoms
-- Spring Boot 练习项目。 
+
+    学习SpringBoot使用。
+    
+###包含
+
+- lombok
+- swagger2
