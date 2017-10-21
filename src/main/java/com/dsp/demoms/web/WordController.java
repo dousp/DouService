@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @PropertySource("classpath:application.properties")
 @RestController
-@RequestMapping("/hello")
-public class HelloController {
+@RequestMapping("/word")
+public class WordController {
 
     @Autowired
     private TimeSheetRepository timeSheetRepository;
@@ -27,7 +27,7 @@ public class HelloController {
     @Value("${info.key}")
     private String appKey;
 
-    @ApiOperation(value="欢迎页面", notes="欢迎页面")
+    @ApiOperation(value="欢迎页面word", notes="欢迎页面")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
         return "Hello Dou!\n"+ "Msg:" + appMsg + "\n" + "Key:" + appKey;
@@ -37,7 +37,7 @@ public class HelloController {
      * 保存数据.
      * @return
      */
-    @ApiOperation(value="保存数据", notes="保存数据到时间表")
+    @ApiOperation(value="保存数据word", notes="保存数据到时间表")
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String save(){
         // 内存数据库操作
@@ -53,7 +53,7 @@ public class HelloController {
      * 获取所有数据.
      * @return
      */
-    @ApiOperation(value="查询数据", notes="查询时间表所有数据")
+    @ApiOperation(value="查询数据word", notes="查询时间表所有数据")
     @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     public Iterable<TimeSheet> findAll(){
         // 内存数据库操作
