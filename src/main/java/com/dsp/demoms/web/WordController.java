@@ -21,16 +21,10 @@ public class WordController {
     @Autowired
     private TimeSheetRepository timeSheetRepository;
 
-    @Value("${info.msg}")
-    private String appMsg;
-
-    @Value("${info.key}")
-    private String appKey;
-
-    @ApiOperation(value="欢迎页面word", notes="欢迎页面")
+    @ApiOperation(value="欢迎页面word", notes="word欢迎页面")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        return "Hello Dou!\n"+ "Msg:" + appMsg + "\n" + "Key:" + appKey;
+        return "Word Index!";
     }
 
     /**

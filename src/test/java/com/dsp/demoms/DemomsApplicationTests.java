@@ -19,20 +19,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 public class DemomsApplicationTests {
 
-    private MockMvc mvc;
+    // private MockMvc mvc;
 
-    @Before
-    public void setUp(){
-        mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
-    }
+    // @Before
+    // public void setUp(){
+    //     mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+    // }
 
-	@Test
-	public void contextLoads() throws Exception {
-
-	    mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
-	        .andExpect(status().isOk())
-	        .andExpect(content().string(equalTo("Hello Dou!")));
-
-	}
+	// @Test
+	// public void contextLoads() throws Exception {
+    //
+	//     mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+	//         .andExpect(status().isOk())
+	//         .andExpect(content().string(equalTo("Hello Dou!")));
+    //
+	// }
 
 }
