@@ -2,10 +2,10 @@
 <configuration  scan="true" scanPeriod="60 seconds" debug="false">
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <contextName>logback</contextName>
-    <property name="log.dev.path"   value="D:\\logs\\demoms\\dev.log" />
-    <property name="log.file.info"  value="/usr/local/logs/demoms/info.log" />
-    <property name="log.file.error" value="/usr/local/logs/demoms/error.log" />
-    <property name="log.file.debug" value="/usr/local/logs/demoms/debug.log" />
+    <property name="log.dev.path"   value="D:\\logs\\DouService\\dev.log" />
+    <property name="log.file.info"  value="/usr/local/logs/DouService/info.log" />
+    <property name="log.file.error" value="/usr/local/logs/DouService/error.log" />
+    <property name="log.file.debug" value="/usr/local/logs/DouService/debug.log" />
 
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
@@ -19,7 +19,7 @@
     </appender>
 
     <logger name="org.springframework.web" level="INFO" />
-    <logger name="com.dsp.demoms" level="WARN" additivity="false">
+    <logger name="com.dsp.dou" level="WARN" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 

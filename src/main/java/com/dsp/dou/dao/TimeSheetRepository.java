@@ -1,6 +1,6 @@
-package com.dsp.demoms.dao;
+package com.dsp.dou.dao;
 
-import com.dsp.demoms.entity.TimeSheet;
+import com.dsp.dou.entity.TimeSheet;
 import org.springframework.data.repository.CrudRepository;
 
 public interface TimeSheetRepository extends CrudRepository<TimeSheet,Long> {

@@ -1,11 +1,10 @@
-package com.dsp.demoms.web;
+package com.dsp.dou.web;
 
-import com.dsp.demoms.dao.TimeSheetRepository;
-import com.dsp.demoms.entity.TimeSheet;
+import com.dsp.dou.dao.TimeSheetRepository;
+import com.dsp.dou.entity.TimeSheet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -1,6 +1,5 @@
-package com.dsp.demoms.entity;
+package com.dsp.dou.entity;
 
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Entity;
