@@ -19,7 +19,7 @@
     </appender>
 
     <logger name="org.springframework.web" level="INFO" />
-    <logger name="com.dsp.dou" level="WARN" additivity="false">
+    <logger name="com.dou.demo" level="WARN" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 

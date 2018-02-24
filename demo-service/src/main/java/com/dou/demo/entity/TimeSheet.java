@@ -1,4 +1,4 @@
-package com.dsp.dou.entity;
+package com.dou.demo.entity;
 
 import lombok.Data;
 

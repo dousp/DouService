@@ -1,4 +1,4 @@
-package com.dsp.dou;
+package com.dou.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableWebMvc
-public class DouServiceApplication {
+public class DemoServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DouServiceApplication.class, args);
+		SpringApplication.run(DemoServiceApplication.class, args);
 	}
 }

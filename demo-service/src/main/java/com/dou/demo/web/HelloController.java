@@ -1,7 +1,7 @@
-package com.dsp.dou.web;
+package com.dou.demo.web;
 
-import com.dsp.dou.dao.TimeSheetRepository;
-import com.dsp.dou.entity.TimeSheet;
+import com.dou.demo.dao.TimeSheetRepository;
+import com.dou.demo.entity.TimeSheet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @PropertySource("classpath:application.properties")
 @RestController
-@RequestMapping("/word")
-public class WordController {
+@RequestMapping("/hello")
+public class HelloController {
 
     @Autowired
     private TimeSheetRepository timeSheetRepository;
 
-    @ApiOperation(value="欢迎页面word", notes="word欢迎页面")
+    @ApiOperation(value="Hello页面", notes="Hello页面")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        return "Word Index!";
+        return "Hello Index!";
     }
 
     /**
      * 保存数据.
      * @return
      */
-    @ApiOperation(value="保存数据word", notes="保存数据到时间表")
+    @ApiOperation(value="保存数据", notes="保存数据到时间表")
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String save(){
         // 内存数据库操作
@@ -46,7 +46,7 @@ public class WordController {
      * 获取所有数据.
      * @return
      */
-    @ApiOperation(value="查询数据word", notes="查询时间表所有数据")
+    @ApiOperation(value="查询数据", notes="查询时间表所有数据")
     @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     public Iterable<TimeSheet> findAll(){
         // 内存数据库操作

@@ -1,4 +1,4 @@
-package com.dsp.dou.config;
+package com.dou.demo.config;
 
 import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
@@ -44,7 +44,7 @@ public class Swagger2Config extends WebMvcConfigurerAdapter {
                 .apiInfo(apiInfo())
                 // .pathMapping("/")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dsp.DouService"))
+                .apis(RequestHandlerSelectors.basePackage("com.dou.*"))
                 .paths(PathSelectors.any())
                 .build();
     }

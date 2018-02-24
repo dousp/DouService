@@ -1,4 +1,4 @@
-package com.dsp.dou.web;
+package com.dou.demo.web;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
