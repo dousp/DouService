@@ -1,5 +1,7 @@
 package com.dou.consumer.web;
 
+import com.dou.consumer.service.DemoService;
+import com.dou.demo.entity.TimeSheet;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.slf4j.Logger;
 
 import java.net.URI;
+import java.util.List;
 
 /**
  * 负载均衡测试
@@ -32,12 +35,20 @@ public class HelloController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
+    @Autowired
+    private DemoService demoService;
+
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
         return restTemplate.getForEntity("http://DEMO-SERVICE/demo-service/hello/index", String.class).getBody();
     }
 
     /**
+     * Ribbon
      * 在helloEx方法中不能够使用之前自动织入的restTemplate，否则会报以下错误:
      * java.lang.IllegalStateException: No instances available for xxxxx
      * 使用lbcRestTemplate或new RestTemplate()
@@ -51,6 +62,24 @@ public class HelloController {
         // return restTemplate.getForEntity(helloUri, String.class).getBody();
         // return new RestTemplate().getForEntity(helloUri, String.class).getBody();
         return this.lbcRestTemplate.getForEntity(helloUri, String.class).getBody();
+    }
+
+    /**
+     * Feign
+     * @return
+     */
+    @RequestMapping(value = "/save", method = RequestMethod.GET)
+    public String save() {
+        return this.demoService.save();
+    }
+
+    /**
+     * Feign
+     * @return
+     */
+    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
+    public Iterable<TimeSheet> findAll() {
+        return this.demoService.findAll();
     }
 
 }

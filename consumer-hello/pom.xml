@@ -26,5 +26,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-ribbon</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dou</groupId>
+            <artifactId>demo-service</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>
