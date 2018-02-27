@@ -2,9 +2,13 @@ package com.dou.demo.web;
 
 import com.dou.demo.dao.TimeSheetRepository;
 import com.dou.demo.entity.TimeSheet;
+import com.netflix.appinfo.EurekaInstanceConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,13 +21,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
 
+    protected Logger logger = LoggerFactory.getLogger(HelloController.class);
+
     @Autowired
     private TimeSheetRepository timeSheetRepository;
+
+
+    @Autowired
+    private EurekaInstanceConfig eurekaInstanceConfig;
+    @Value("${server.port}")
+    private int serverPort = 0;
+
 
     @ApiOperation(value="Hello页面", notes="Hello页面")
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        return "Hello Index!";
+        this.logger.info("/hello, instanceId:{}, host:{}", eurekaInstanceConfig.getInstanceId(), eurekaInstanceConfig.getHostName(false));
+        return "Hello, Spring Cloud! My port is " + String.valueOf(serverPort);
     }
 
     /**
